@@ -1,0 +1,10 @@
+---
+- name: Apply APT management role
+  hosts: server
+  become: yes  # To run tasks with sudo
+  roles:
+    # - apt_management
+    # - ntp
+    # - monit
+    # - rsyslog
+    - kibana

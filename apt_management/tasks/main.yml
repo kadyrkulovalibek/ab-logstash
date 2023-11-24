@@ -1,0 +1,16 @@
+---
+- name: Ensure APT packages are installed
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ apt_packages }}"  # Define a list of packages in defaults/main.yml
+
+- name: Update APT package cache
+  apt:
+    update_cache: yes
+
+- name: Upgrade all packages
+  apt:
+    upgrade: yes
+    autoremove: yes
+    autoclean: yes

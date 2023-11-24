@@ -1,0 +1,13 @@
+# roles/rsyslog/tasks/main.yml
+
+- name: Ensure rsyslog is installed
+  apt:
+    name: rsyslog
+    state: present
+
+- name: Configure rsyslog
+  template:
+    src: rsyslog.conf.j2
+    dest: /etc/rsyslog.conf
+  notify: Restart rsyslog
+  register: rsyslog_config_result

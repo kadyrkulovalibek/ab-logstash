@@ -1,0 +1,9 @@
+# roles/rsyslog/templates/rsyslog.conf.j2
+
+$ModLoad imuxsock # provides support for local system logging
+$ModLoad imklog   # provides kernel logging support
+
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+
+# Log all messages to local files
+*.* /var/log/syslog

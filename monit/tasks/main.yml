@@ -1,0 +1,11 @@
+---
+- name: Install Monit package
+  apt:
+    name: monit
+    state: present
+
+- name: Configure Monit
+  template:
+    src: monitrc.j2
+    dest: /etc/monit/monitrc
+  notify: Restart Monit service

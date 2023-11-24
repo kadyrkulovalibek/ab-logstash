@@ -1,0 +1,9 @@
+# /etc/ntp.conf
+
+# ... other NTP configuration ...
+
+{% for server in ntp_servers %}
+server {{ server }} iburst
+{% endfor %}
+
+# ... other NTP configuration ...

@@ -1,0 +1,5 @@
+---
+- name: Restart Monit service
+  service:
+    name: monit
+    state: restarted
